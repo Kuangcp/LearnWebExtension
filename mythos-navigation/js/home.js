@@ -1,5 +1,3 @@
-
-
 var fun = 0        
 $(".menu-element").on('click', function () {
     type = $(this).data('type')
@@ -23,15 +21,6 @@ $(".menu-element").on('click', function () {
         window.location = 'refreshData.html'
     }
 })
-function initData(config, list){
-    config.type.forEach(function(urlType){
-        console.log(urlType)
-        list[urlType].forEach(function(url){
-            console.log(url)
-        })
-    })
-
-}
 function insertData(lists) {
     temp = '<div class="row">'
     count = 0
@@ -50,6 +39,11 @@ function insertData(lists) {
 }
 
 $(function () {
+    list = JSON.parse(localStorage.getItem('main-data'))
+    // console.log(list)
     insertData(list.code)
-    initData(config, list)
+    // initData(config, list)
+    // localStorage.setItem('main-data', JSON.stringify(list))
+    // console.log(localStorage.getItem('main-data'))
+    
 });

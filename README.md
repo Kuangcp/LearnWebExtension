@@ -1,8 +1,8 @@
 # 学习WebExtension
-> [源码来源](https://github.com/mdn/webextensions-examples)
+> [参考项目:webextensions-examples](https://github.com/mdn/webextensions-examples)  
+> [newtabtools](https://github.com/darktrojan/newtabtools)
 
-- 图标来源:http://linhpham.me/miu/
-
+[个人主页](https://addons.mozilla.org/zh-CN/firefox/user/Myth_kuang/)
 
 ## 已上架
 - [mythos-navigation](https://addons.mozilla.org/zh-CN/firefox/addon/kuangcp-nav/)
