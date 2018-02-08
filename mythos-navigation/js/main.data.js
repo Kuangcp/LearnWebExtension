@@ -1,5 +1,3 @@
-
-
 config={
     "col":"6",
     "colNum":"2",
@@ -41,7 +39,7 @@ list={
   ],
     code:[
       {"title":"Github","url":"https://github.com/Kuangcp"},
-      {"title":"Notes","url":"https://github.com/Kuangcp/Notes/blob/master/SUMMARY.md"},
+      {"title":"笔记仓库","url":"https://github.com/Kuangcp/Notes/blob/master/SUMMARY.md"},
       {"title":"码云","url":"https://gitee.com/kcp1104"},
       {"title":"阿里邮箱","url":"https://mail.aliyun.com/alimail/"},
       {"title":"Outlook","url":"https://outlook.live.com/mail/#/inbox"},

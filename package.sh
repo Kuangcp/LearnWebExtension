@@ -7,4 +7,7 @@ fi
 
 if [ "$1" = 'mn' ];then
 	cd mythos-navigation  && zip -r ../build/mythos-navigation.xpi *
+	
+	cd ../build && zip -d mythos-navigation.xpi update.sh
+	
 fi
