@@ -1,10 +1,13 @@
-list = JSON.parse(localStorage.getItem('main-data'))
-selectDom = ''
-config.type.forEach(function (value) {
-    selectDom += '<option value="' + value + '">' + value + '</option>'
-})
-var Num = 0
-var Total = 0
+data = localStorage.getItem('main-data')
+if (data !== ''){
+    list = JSON.parse(data)
+    selectDom = ''
+    config.type.forEach(function (value) {
+        selectDom += '<option value="' + value + '">' + value + '</option>'
+    })
+    var Num = 0
+    var Total = 0
+}
 
 function addLine() {
     Num++
