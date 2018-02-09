@@ -1,25 +1,6 @@
-var fun = 0        
 $(".menu-element").on('click', function () {
     type = $(this).data('type')
-    // console.log('click', type)
-
-    if (type == 'fun') {
-        fun++
-    }else{
-        fun = 0                
-    }
-    if (type == 'fun') {
-        insertData(list.fun)
-    } else if (type == 'code') {
-        insertData(list.code)
-    } else if (type == 'cloud') {
-        insertData(list.cloud)
-    } else if (type == 'read') {
-        insertData(list.read)
-    }
-    if(fun>2){
-        window.location = 'refreshData.html'
-    }
+    insertData(list[type])
 })
 function insertData(lists) {
     temp = '<div class="row">'
