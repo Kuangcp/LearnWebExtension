@@ -18,7 +18,7 @@ function insertData(lists) {
 
 var thisPage = 0
 data = localStorage.getItem('main-data')
-if (data !== ''){
+if (data != null){
     list = JSON.parse(data)
     insertData(list.code)
 // 监听滚动事件的变量
@@ -35,7 +35,7 @@ list.config.buttons.forEach(function(value){
 $("#menu").html(temp)
 
 // 监听滚动事件
-$("#icon-btn-code").css('background-color', '#f1f1f1')
+$("#icon-btn-code").css('background-color', '#ffffff')
 counter.addEventListener('DOMMouseScroll', function(e){
     if(scrollFlag == 1){
         // console.log(e.timeStamp)
@@ -61,7 +61,7 @@ counter.addEventListener('DOMMouseScroll', function(e){
         list.config.buttons.forEach(function(value){
             $("#icon-btn-"+value.type).css('background-color', '#c2c2c2')
         })
-        $("#icon-btn-"+thisType).css('background-color', '#f1f1f1')
+        $("#icon-btn-"+thisType).css('background-color', '#ffffff')
         // console.log(thisType)
         insertData(list[list.config.type[thisPage]])
     }

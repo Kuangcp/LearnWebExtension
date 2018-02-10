@@ -1,5 +1,5 @@
 data = localStorage.getItem('main-data')
-if (data !== ''){
+if (data != null){
     list = JSON.parse(data)
     selectDom = ''
     list.config.type.forEach(function (value) {

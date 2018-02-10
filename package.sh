@@ -9,6 +9,6 @@ fi
 if [ "$1" = 'mn' ];then
 	cd mythos-navigation  && zip -r ../build/mythos-navigation-$2.xpi *
 	
-	cd ../build && zip -d mythos-navigation-$2.xpi update.sh README.md
+	cd ../build && zip -d mythos-navigation-$2.xpi update.sh README.md origin/* main.data.js main.json
 	
 fi
