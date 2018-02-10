@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,61 @@
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"/> -->
     <link href="css/main.css" rel="stylesheet" />
     <link rel="shortcut icon" href="icons/48.png" type="image/x-icon" />
-    <link href="json/main.json"/>
+    <!-- <link href="json/main.json"/> -->
     <style>
-        body{
+        body {
             /* background-image: url("icons/5710000090.jpg"); */
             background-color: #012643;
             width: 100%;
-            height: 97%;
+            height: 96%;
+            z-index: 10;
         }
     </style>
 </head>
 
 <body>
     <main id="main" class="main"></main>
-    <div id="menu" class="menu"></div>
-    <div id="hhh"></div>
+    <div id="menu" class="menu">
+        <div class="menu-button " data-type="setting" id="icon-btn-setting">
+            <img src="svg/setting.png" class="svg-pic" id="icon-setting">
+        </div>
+    </div>
+
+    <div id="config" class="config-main" style="display:none;">
+        <div class="closeBtn" id="closeConfig">
+            <img src="svg/close.png" alt="关闭" class="svg-pic" />
+        </div>
+        <div id="input"></div>
+        <div class="btn-group">
+            <!-- <button class="add-line">新增一行</button><br/> -->
+            <span class="add-line ">
+                <img src="svg/add.png" class="svg-pic" />
+            </span>
+            <!-- <button id="showJSON">转成JSON输出</button> -->
+            <span class="showJSON" data-simple="true">
+                <img src="svg/text.png" class="svg-pic" />
+            </span>
+            <span class="showJSON" data-simple="false">
+                    <img src="svg/print.png" class="svg-pic" />
+                </span>
+            <!-- <a href=""><button>刷新页面</button></a> -->
+            <a href="">
+                <img src="svg/refresh.png" class="svg-pic" />
+            </a>
+            <!-- <button id="showJSONAndWrite">输出并写入配置</button> -->
+            <span id="showJSONAndWrite">
+                <img src="svg/save.png" class="svg-pic" />
+            </span>
+        </div>
+        <textarea id="out" class="inputBox"></textarea>
+    </div>
+
+
     <script src="js/jquery.min.js"></script>
-    <script src="js/main.data.js"></script>
+    <!-- <script src="js/main.data.js"></script> -->
+    <script src="js/format.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/config.js"></script>
 </body>
+
 </html>

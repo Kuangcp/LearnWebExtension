@@ -2,7 +2,7 @@ data = localStorage.getItem('main-data')
 if (data !== ''){
     list = JSON.parse(data)
     selectDom = ''
-    config.type.forEach(function (value) {
+    list.config.type.forEach(function (value) {
         selectDom += '<option value="' + value + '">' + value + '</option>'
     })
     var Num = 0
@@ -24,7 +24,7 @@ var dict = new Array()
 
 // 读取输入得到字典
 function readInput() {
-    console.log('读取输入')
+    // console.log('读取输入')
     for (var i = 1; i <= Total; i++) {
         dict['title' + i] = $("#title" + i).val()
         dict['type' + i] = $("#type" + i).val()
@@ -33,14 +33,20 @@ function readInput() {
     }
 }
 
-function appendJSON() {
+function appendJSON(simple) {
     readInput()
     $("#out").val('')
-    $("#out").val(JSON.stringify(list))
+    if (simple == true){
+        result = JSON.stringify(list)
+    }else{
+        result = formatJson(JSON.stringify(list))
+    }
+    $("#out").val(result)
+    
 }
 $("#out").val('')
-$("#showJSON").on('click', function () {
-    appendJSON()
+$(".showJSON").on('click', function () {
+    appendJSON($(this).data('simple'))
 })
 function writeData(originDomId){
     data = $("#"+originDomId).val()
@@ -50,11 +56,7 @@ function writeData(originDomId){
 $("#showJSONAndWrite").on('click', function () {
     writeData("out")
 })
-$("#initData").on('click', function(){
-    writeData("recovery")
-    data = $("#recovery").val()
-
-    // console.log(JSON.stringify(data))
-    localStorage.setItem('main-data', data)
-    console.log(localStorage.getItem('main-data'))
+$("#closeConfig").on('click', function(){
+    scrollFlag = 1
+    $("#config").css('display', 'none')
 })

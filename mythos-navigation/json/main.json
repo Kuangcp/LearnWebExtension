@@ -1,4 +1,29 @@
 {
+  "config": {
+    "col": "7",
+    "buttons": [{
+      "title": "开发",
+      "type": "code",
+      "url": "code.png"
+    }, {
+      "title": "云平台",
+      "type": "cloud",
+      "url": "cloud.png"
+    }, {
+      "title": "文档",
+      "type": "read",
+      "url": "read.png"
+    }, {
+      "title": "娱乐",
+      "type": "fun",
+      "url": "happy.png"
+    }, {
+      "title": "设置",
+      "type": "setting",
+      "url": "setting.png"
+    }],
+    "type": ["code", "cloud", "read", "fun"]
+  },
   "fun": [{
     "title": "知乎",
     "url": "https://www.zhihu.com/"
@@ -125,5 +150,8 @@
   }, {
     "title": "DockerHub",
     "url": "https://hub.docker.com/u/mythkuang/"
+  }, {
+    "title": "火狐插件",
+    "url": "https://addons.mozilla.org/zh-CN/firefox/user/Myth_kuang/"
   }]
 }
