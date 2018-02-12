@@ -1,33 +1,45 @@
 
 .row{
-    width: 109%;
-    margin-left: -10px;
+    /* width: 98%; */
+    /* margin-left: -10px; */
     /* background-color: #0084FF; */
     /* margin-right:200px; */
+}
+
+/* 图标和a标签容器 */
+.urlBox{
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
+
+    /* width: 13%; */
+
 }
 .box {
     background-color: #c2c2c2;
     height: 110px;
     text-align: center;
-    margin-bottom: 5px;
-    /* margin-right: -25px; */
-    border-radius: 4px;
+    border-radius: 6px;
 }
-.urlBox{
-    float: left;
-    margin-left: 5px;
-    width: 13%;
-
-}
-.text {
-    padding-top: 30px;
+.url-text {
+    /* padding-top: 30px; */
     font-size: 30px;
     color: #0084FF;
+}
+.icon-div{
+    padding-top: 10px;
+}
+.icon{
+    /* padding-top: 20px; */
+    height: 40px;
+    width: 40px;
+    /* float: left; */
+    text-align: center;
 }
 
 .main {
     z-index: 5;
-    margin: 5px 32px 0 5px;
+    /* margin: 5px 32px 0 5px; */
 }
 
 .menu {

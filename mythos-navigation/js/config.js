@@ -55,6 +55,8 @@ function writeData(originDomId){
 }
 $("#showJSONAndWrite").on('click', function () {
     writeData("out")
+    alert('保存成功')
+    window.location.href = ''
 })
 $("#closeConfig").on('click', function(){
     scrollFlag = 1

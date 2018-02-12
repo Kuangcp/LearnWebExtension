@@ -1,19 +1,59 @@
+// http://blog.csdn.net/menglexinglai/article/details/39521905
+function CheckImgExists(imgurl) {  
+    var ImgObj = new Image(); //判断图片是否存在  
+    ImgObj.src = imgurl;  
+    //没有图片，则返回-1  
+    if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
+        return true;  
+    } else {  
+        return false;
+    }  
+} 
+// 得到浏览器真实大小
+function autoSetWidth(){
+    var trueWidth = document.body.clientWidth;
+    var trueHeight = document.body.clientHeight;
+    boxWidth = parseInt((trueWidth - list.config.col*10)/list.config.col)
+    allBoxWidth = (boxWidth+5)*list.config.col
+    // console.log(allBoxWidth)
+    // console.log(trueWidth-allBoxWidth)
+    $(".urlBox").css('width', boxWidth+3)
+    // $(".row").css('margin-left', (trueWidth-allBoxWidth)/4)
+    // console.log(list.config.col+' 宽度:'+trueWidth+' 高度:'+trueHeight+'box宽:'+boxWidth)
+}
 
 function insertData(lists) {
     temp = '<div class="row">'
     count = 0
     lists.forEach(function (value) {
         count++
-        // console.log(value.title, value.url)
+        urlList = value.url.split('/')
+        // console.log(urlList)
+        imgUrl = urlList[0]+'//'+urlList[2]+'/favicon.ico'
+        
+        // console.log(imgUrl+':'+CheckImgExists(imgUrl))
+        imgExists = CheckImgExists(imgUrl)
+        if(imgExists == true){
+            imgDom = '<img src="'+imgUrl+'" class="icon"/>'
+        }else{
+            // console.log('9090')
+            imgDom = '<div style="" class="icon"></div>'
+        }
+        
+
         temp += '<div class="urlBox" style="">' +
-            '<a href="' + value.url + '" style="text-decoration: none;">' +
-            '<div class="box"><div class="text">' + value.title + '</div></div></div></a>'
+            '<a href="' + value.url + '" style="text-decoration: none;">'
+            +'<div class="box">'
+            +'<div class="icon-div">'+imgDom+'</div>'
+            +'<div class="url-text">' + value.title + '</div>'
+            +'</div></div></a>'
         if (count % config.col == 0) {
             temp += '</div><br/><div class="row">'
         }
     })
     temp += '</div>'
     $("#main").html(temp)
+    autoSetWidth()
 }
 
 var thisPage = 0
@@ -25,6 +65,7 @@ if (data != null){
 var counter=document.body
 var timeStampVal = 0
 var scrollFlag = 1
+
 
 // 追加按钮
 temp = ''
