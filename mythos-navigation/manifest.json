@@ -1,8 +1,8 @@
 {
-  "description": "just simple navigation page",
+  "description": "just simple navigation page, compatible chrome ",
   "manifest_version": 2,
   "name": "mythos-navigation",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "homepage_url": "https://github.com/Kuangcp/LearnWebExtension/tree/master/mythos-navigation",
   "icons": {
     "48": "icons/48.png"
@@ -12,6 +12,10 @@
     "scripts": ["background.js"]
   },
 
+  "chrome_url_overrides":
+{
+	"newtab": "index.html"
+},
   "browser_action": {
     "default_icon": "icons/32.png"
   }

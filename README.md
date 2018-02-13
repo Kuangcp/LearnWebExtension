@@ -1,12 +1,16 @@
 # 学习WebExtension
 > [参考项目:webextensions-examples](https://github.com/mdn/webextensions-examples)  
-> [newtabtools](https://github.com/darktrojan/newtabtools)
-> [saka-key](https://github.com/lusakasa/saka-key)
+> [newtabtools](https://github.com/darktrojan/newtabtools)  
+> [saka-key](https://github.com/lusakasa/saka-key)  
 
-[个人主页](https://addons.mozilla.org/zh-CN/firefox/user/Myth_kuang/)
+[火狐开发社区个人主页](https://addons.mozilla.org/zh-CN/firefox/user/Myth_kuang/)
+
+## 教程
+> [【干货】Chrome插件(扩展)开发全攻略](http://www.cnblogs.com/liuxianan/p/chrome-plugin-develop.html) | [对应源码库](https://github.com/sxei/chrome-plugin-demo)
+> [想从火狐转chrome,可是找不到对应的套件,一直转不过去？](https://www.zhihu.com/question/23342733)
 
 ## 已上架
-- [mythos-navigation](https://addons.mozilla.org/zh-CN/firefox/addon/kuangcp-nav/)
+- [源码地址](/mythos-navigation)| [mythos-navigation火狐AMO地址](https://addons.mozilla.org/zh-CN/firefox/addon/kuangcp-nav/)
 	- 简易的导航页,方便自己使用而已...
 
 
@@ -14,3 +18,7 @@
 其实就是一张 3000X200 的图片而已  
 > 但是因此发现了一个神器 [pixlr](https://pixlr.com/editor/) 在线的PS, 我的天, 6666
 还有 [PS在线工具](https://www.photoshop.com/tools?wf=editor)`功能有限,也可以玩玩`
+
+
+## 迁移到Chrome
+> 由于现在都使用了同一个接口规范, 所以配置代码无需改动, 只需少数地方做下适配就可以迁移过去了
