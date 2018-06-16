@@ -10,6 +10,9 @@
 > [想从火狐转chrome,可是找不到对应的套件,一直转不过去？](https://www.zhihu.com/question/23342733)
 
 ## 已上架
+### mythos-navigation
+> [初始化配置文件](https://github.com/Kuangcp/LearnWebExtension/blob/master/mythos-navigation/json/main.json)
+
 - [源码地址](/mythos-navigation)| [mythos-navigation火狐AMO地址](https://addons.mozilla.org/zh-CN/firefox/addon/kuangcp-nav/)
 	- 简易的导航页,方便自己使用而已...
 
