@@ -1,10 +1,26 @@
 // http://blog.csdn.net/menglexinglai/article/details/39521905
+
+function convertData(imgObj, url){
+    var result;
+    img.onload = function() {
+        var canvas = document.createElement('canvas'); 
+        canvas.height = img.height;
+        canvas.width = img.width;
+        var ctx=canvas.getContext("2d");
+        console.log(canvas.baseURI);
+        
+        // result = canvas.toDataURL();  // 输出 Data URI
+    }
+    img.src = url;
+    return result;
+}
 function CheckImgExists(imgurl) {  
     var ImgObj = new Image(); //判断图片是否存在  
     ImgObj.src = imgurl;  
-    //没有图片，则返回-1  
+    //没有图片，则返回false 
     if (ImgObj.fileSize > 0 || (ImgObj.width > 0 && ImgObj.height > 0)) {  
-        return true;  
+        return convertData(ImgObj, imgurl)
+        // return true;  
     } else {  
         return false;
     }  
@@ -29,7 +45,7 @@ function insertData(lists) {
         imgUrl = urlList[0]+'//'+urlList[2]+'/favicon.ico'
         
         imgExists = CheckImgExists(imgUrl)
-        if(imgExists == true){
+        if(imgExists != false){
             imgDom = '<img src="'+imgUrl+'" class="icon"/>'
         }else{
             imgDom = '<div style="" class="icon"></div>'
