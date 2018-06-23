@@ -1,4 +1,5 @@
 // 参考 http://www.jb51.net/article/44533.htm
+// TODO  完成拖拽
 function Drag(id) {
     var $ = function (flag) {
         return document.getElementById(flag);

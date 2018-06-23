@@ -27,3 +27,9 @@
 - [X] 更改数据交互方式
 
 > 并且发现了, 电脑端上的插件卸载后, localStorage是还是保留的, 手机端,卸载就删除了所有缓存
+
+使用 web-ext 打包扩展, https://developer.mozilla.org/zh-CN/Add-ons/WebExtensions/Getting_started_with_web-ext
+
+火狐上的使用是直接上传zip, chrome就能直接写, chrome还能打包出一个crx文件
+
+

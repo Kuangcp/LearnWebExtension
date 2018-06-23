@@ -1,25 +1,9 @@
 config={
-    "col":"7",
-    buttons:[{
-        "title":"开发",
-        "type":"code",
-        "url":"app.png"
-    },{
-        "title":"云平台",
-        "type":"cloud",
-        "url":"cloud.png"
-    },{
-        "title":"文档",
-        "type":"read",
-        "url":"read.png"
-    },{
-        "title":"娱乐",
-        "type":"fun",
-        "url":"happy.png"
-    },{
-        "title":"设置",
-        "type":"setting",
-        "url":"setting.png"
+    "col":"6",
+    "colNum":"2",
+    button:[{
+        "title":"",
+        "":"",
     }],
     type:['code', 'cloud', 'read',  'fun']
 }
