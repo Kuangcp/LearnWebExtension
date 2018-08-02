@@ -34,17 +34,21 @@ function insertData(lists) {
     lists.forEach(function (value) {
         count++
         urlList = value.url.split('/')
-        imgUrl = urlList[0] + '//' + urlList[2] + '/favicon.ico'
-
-        // TODO 如何更好的处理图片
-        imgExists = CheckImgExists(imgUrl)
-        // console.log(imgUrl, imgExists)
-        if (imgExists != false) {
-            imgDom = '<img src="' + imgUrl + '" class="icon"/>'
-        } else {
+        var loadImgFlag = localStorage.getItem('loadImg')
+        if(loadImgFlag == null || loadImgFlag !== 1){
             imgDom = '<div style="" class="icon"></div>'
+        }else{
+            imgUrl = urlList[0] + '//' + urlList[2] + '/favicon.ico'
+            // TODO 如何更好的处理图片
+            imgExists = CheckImgExists(imgUrl)
+            console.log(imgUrl, imgExists)
+            if (imgExists != false) {
+                imgDom = '<img src="' + imgUrl + '" class="icon"/>'
+            } else {
+                imgDom = '<div style="" class="icon"></div>'
+            }
         }
-        // imgDom = '<div style="" class="icon"></div>'
+       
         temp += '<div class="urlBox" style="">' +
             '<a href="' + value.url + '" style="text-decoration: none;">' +
             '<div class="box">' +
@@ -58,6 +62,8 @@ function insertData(lists) {
     temp += '</div>'
     $("#main").html(temp)
     autoSetWidth()
+    loadCustomConfig()  
+
 }
 // 得到浏览器真实大小
 function autoSetWidth() {
@@ -159,3 +165,35 @@ $(".menu-button").on('click', function () {
     $("#icon-btn-" + type).css('background-color', '#f1f1f1')
     insertData(list[type])
 })
+
+function loadCustomConfig() {
+    customBGColor('menu-color', '.menu-button')
+    customBGColor('box-color', '.box')
+    customBGColor('config-color', '.config-main')
+    customBGColor('input-color', '.inputBox')
+    customBGColor('body-color', '.main-body')
+
+    customColor('url-title-color', '.url-text')
+    customColor('input-text-color', '.inputBox')
+    custom('input-text-size', '.inputBox', 'font-size')
+}
+
+function customByConfig(keyName, action) {
+    var value = localStorage.getItem(keyName)
+    if(value!=null){
+        action(value)
+    }
+}
+function custom(keyName, className, fieldName) {
+    customByConfig(keyName, function action(value) {
+        $(className).css(fieldName, value)
+    })
+}
+function customBGColor(keyName, className) {
+    custom(keyName, className, 'background-color')
+}
+function customColor(keyName, className) {
+    custom(keyName, className, 'color')
+}
+
+loadCustomConfig()

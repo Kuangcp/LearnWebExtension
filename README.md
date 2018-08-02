@@ -3,6 +3,7 @@
 > [newtabtools](https://github.com/darktrojan/newtabtools)  
 > [saka-key](https://github.com/lusakasa/saka-key)  
 
+[旧版页面](https://addons.mozilla.org/zh-CN/developers/addons) 
 [火狐开发社区个人主页](https://addons.mozilla.org/zh-CN/firefox/user/Myth_kuang/)
 
 ## 教程

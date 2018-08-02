@@ -8,10 +8,29 @@
 
 - 在火狐中 `首选项>>隐私与安全>>网站数据` 如果清除了这一项,就会导致插件的数据全部丢失
 
+## 配置
+- localStorage 
+    - loadImg 1:加载网站icon  否则不加载
+    - 
+
+customBGColor('menu-color', '.menu-button')
+customBGColor('box-color', '.box')
+customBGColor('config-color', '.config-main')
+customBGColor('input-color', '.inputBox')
+customBGColor('body-color', '.main-body')
+
+customColor('url-title-color', '.url-text')
+customColor('input-text-color', '.inputBox')
+custom('input-text-size', '.inputBox', 'font-size')
+
+
+body-color #343436
+box-color #2A2A2E
+url-title-color  #FFFFFF
 
 ## 步骤
 - 编写代码, 当需要发布版本就更改manifest.json的版本号, 
-- 然后`git tag -a 版本号 -m 注释` 再打包, 
+- 然后`git tag -a 版本号 -m 注释` 再打包: `./package.sh mn 版本`
 - 这样的话每个版本的源码就对应上了
 
 ## TODO
