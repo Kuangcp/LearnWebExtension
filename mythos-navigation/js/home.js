@@ -65,14 +65,17 @@ function insertData(lists) {
     loadCustomConfig()
 
 }
-// 得到浏览器真实大小
+// 得到浏览器真实大小 TODO 适配问题
 function autoSetWidth() {
     var trueWidth = document.body.clientWidth;
     var trueHeight = document.body.clientHeight;
+    // var size =  list.config.view[""+trueWidth].[list.config.col];
+    // console.log(size)
     boxWidth = parseInt((trueWidth - list.config.col * 10) / list.config.col)
     allBoxWidth = (boxWidth + 5) * list.config.col
+    // 1920 232
     $(".urlBox").css('width', boxWidth + 3)
-    // console.log(list.config.col+' 宽度:'+trueWidth+' 高度:'+trueHeight+'box宽:'+boxWidth)
+    console.log(list.config.col+' 宽度:'+trueWidth+' 高度:'+trueHeight+'box宽:'+boxWidth)
 }
 // 鼠标滚轮
 function flide(delta, e) {
