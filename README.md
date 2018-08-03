@@ -28,4 +28,5 @@
 > 由于现在都使用了同一个接口规范, 所以配置代码无需改动, 只需少数地方做下适配就可以迁移过去了
 也就是监听滚轮的地方加上Chrome的适配, 然后直接将该文件夹放入Chrome即可完成安装
 
+https://developer.mozilla.org/zh-CN/docs/Web/API/Blob
 

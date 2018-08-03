@@ -46,4 +46,4 @@ showJsonFontSize 14
 
 火狐上的使用是直接上传zip, chrome就能直接写, chrome还能打包出一个crx文件
 
-
+急需学习和参考的项目 : https://github.com/darktrojan/newtabtools.git
