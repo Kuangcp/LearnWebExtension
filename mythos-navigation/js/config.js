@@ -1,5 +1,5 @@
 data = localStorage.getItem('main-data')
-if (data != null){
+if (data != null) {
     list = JSON.parse(data)
     selectDom = ''
     list.config.type.forEach(function (value) {
@@ -9,12 +9,21 @@ if (data != null){
     var Total = 0
 }
 
+function getMainData() {
+    data = localStorage.getItem('main-data')
+    if (data != null) {
+        return JSON.parse(data)
+    }
+    return data
+}
+
 function addLine() {
     Num++
     Total++
     $("#input").append('<select class="link-type" id="type' + Total + '">' + selectDom + '</select>' +
         '<input id="title' + Total + '" class="title"/><input id="url' + Total + '" class="url"/><br/>')
 }
+
 $(".add-line").on('click', function () {
     addLine()
 })
@@ -29,27 +38,31 @@ function readInput() {
         dict['title' + i] = $("#title" + i).val()
         dict['type' + i] = $("#type" + i).val()
         dict['url' + i] = $("#url" + i).val()
-        list[dict['type' + i]].push({"title":dict['title' + i],"url":dict['url' + i]})
+        list[dict['type' + i]].push({
+            "title": dict['title' + i],
+            "url": dict['url' + i]
+        })
     }
 }
 
 function appendJSON(simple) {
     readInput()
     $("#out").val('')
-    if (simple == true){
+    if (simple == true) {
         result = JSON.stringify(list)
-    }else{
+    } else {
         result = formatJson(JSON.stringify(list))
     }
     $("#out").val(result)
-    
+
 }
 $("#out").val('')
 $(".showJSON").on('click', function () {
     appendJSON($(this).data('simple'))
 })
-function writeData(originDomId){
-    data = $("#"+originDomId).val()
+
+function writeData(originDomId) {
+    data = $("#" + originDomId).val()
     localStorage.setItem('main-data', data)
     console.log(localStorage.getItem('main-data'))
 }
@@ -58,7 +71,7 @@ $("#showJSONAndWrite").on('click', function () {
     alert('保存成功')
     window.location.href = ''
 })
-$("#closeConfig").on('click', function(){
+$("#closeConfig").on('click', function () {
     scrollFlag = 1
     $("#config").css('display', 'none')
 })

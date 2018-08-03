@@ -35,9 +35,9 @@ function insertData(lists) {
         count++
         urlList = value.url.split('/')
         var loadImgFlag = localStorage.getItem('loadImg')
-        if(loadImgFlag == null || loadImgFlag !== 1){
+        if (loadImgFlag == null || loadImgFlag !== 1) {
             imgDom = '<div style="" class="icon"></div>'
-        }else{
+        } else {
             imgUrl = urlList[0] + '//' + urlList[2] + '/favicon.ico'
             // TODO 如何更好的处理图片
             imgExists = CheckImgExists(imgUrl)
@@ -48,7 +48,7 @@ function insertData(lists) {
                 imgDom = '<div style="" class="icon"></div>'
             }
         }
-       
+
         temp += '<div class="urlBox" style="">' +
             '<a href="' + value.url + '" style="text-decoration: none;">' +
             '<div class="box">' +
@@ -62,7 +62,7 @@ function insertData(lists) {
     temp += '</div>'
     $("#main").html(temp)
     autoSetWidth()
-    loadCustomConfig()  
+    loadCustomConfig()
 
 }
 // 得到浏览器真实大小
@@ -145,6 +145,7 @@ if (data != null) {
 
 
 }
+// 菜单点击
 $(".menu-button").on('click', function () {
     type = $(this).data('type')
     if (type === 'setting') {
@@ -166,34 +167,25 @@ $(".menu-button").on('click', function () {
     insertData(list[type])
 })
 
-function loadCustomConfig() {
-    customBGColor('menu-color', '.menu-button')
-    customBGColor('box-color', '.box')
-    customBGColor('config-color', '.config-main')
-    customBGColor('input-color', '.inputBox')
-    customBGColor('body-color', '.main-body')
 
-    customColor('url-title-color', '.url-text')
-    customColor('input-text-color', '.inputBox')
-    custom('input-text-size', '.inputBox', 'font-size')
+// 加载自定义配置
+function loadCustomConfig() {
+    var data = getMainData()
+    data.config.customizableOptions.forEach(function (value) {
+        // console.log(value.key, localStorage.getItem(value.key))
+        custom(value.key, value.className, value.fieldName)
+    })
 }
 
 function customByConfig(keyName, action) {
     var value = localStorage.getItem(keyName)
-    if(value!=null){
+    if (value != null) {
         action(value)
     }
 }
+
 function custom(keyName, className, fieldName) {
     customByConfig(keyName, function action(value) {
         $(className).css(fieldName, value)
     })
 }
-function customBGColor(keyName, className) {
-    custom(keyName, className, 'background-color')
-}
-function customColor(keyName, className) {
-    custom(keyName, className, 'color')
-}
-
-loadCustomConfig()
