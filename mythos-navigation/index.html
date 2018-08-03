@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home-Page</title>
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"/> -->
     <link href="css/main.css" rel="stylesheet" />
     <link rel="shortcut icon" href="icons/48.png" type="image/x-icon" />
-    <!-- <link href="json/main.json"/> -->
     <style>
         body {
-            background-color: #012643;
-            width: 99%;
-            height: 96%;
+            background-color: #343436;
+            /* height: 96%; */
             z-index: 10;
         }
     </style>
-    
+
 </head>
 
 <body class="main-body">
@@ -34,29 +31,34 @@
         </div>
         <div id="input"></div>
         <div class="btn-group">
-            <!-- <button class="add-line">新增一行</button><br/> -->
             <span class="add-line ">
                 <img src="svg/add.png" class="svg-pic" />
             </span>
-            <!-- <button id="showJSON">转成JSON输出</button> -->
             <span class="showJSON" data-simple="true">
                 <img src="svg/text.png" class="svg-pic" />
             </span>
-            <span class="showJSON" data-simple="false"><img src="svg/print.png" class="svg-pic" /></span>
-            <!-- <a href=""><button>刷新页面</button></a> -->
-            <a href=""><img src="svg/refresh.png" class="svg-pic"/></a>
-            <!-- <button id="showJSONAndWrite">输出并写入配置</button> -->
+            <span class="showJSON" data-simple="false">
+                <img src="svg/print.png" class="svg-pic" />
+            </span>
+            <a href="">
+                <img src="svg/refresh.png" class="svg-pic" />
+            </a>
             <span id="showJSONAndWrite">
                 <img src="svg/save.png" class="svg-pic" />
             </span>
         </div>
         <textarea id="out" class="inputBox"></textarea>
-
         <div>
+            <select id="theme">
+                <option value="default">default</option>
+                <option value="orange">orange</option>
+            </select>
+            <button id="select-button">apply</button>
         </div>
+        
     </div>
+
     <script src="js/jquery.slim.min.js"></script>
-    <!-- <script src="js/main.data.js"></script> -->
     <script src="js/format.js"></script>
     <script src="js/config.js"></script>
     <script src="js/home.js"></script>

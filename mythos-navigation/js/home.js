@@ -67,18 +67,24 @@ function insertData(lists) {
 }
 // 得到浏览器真实大小 TODO 适配问题
 function autoSetWidth() {
-    var trueWidth = document.body.clientWidth;
-    var trueHeight = document.body.clientHeight;
-    // var size =  list.config.view[""+trueWidth].[list.config.col];
-    // console.log(size)
-    boxWidth = parseInt((trueWidth - list.config.col * 10) / list.config.col)
+    var windowWidth = document.body.clientWidth;
+    var windowHeight = document.body.clientHeight;
+
+    boxWidth = parseInt((windowWidth - list.config.col * 10) / list.config.col)
     allBoxWidth = (boxWidth + 5) * list.config.col
-    // 1920 232
-    $(".urlBox").css('width', boxWidth + 3)
-    console.log(list.config.col+' 宽度:'+trueWidth+' 高度:'+trueHeight+'box宽:'+boxWidth)
+    var width = boxWidth + 3;
+    var size = list.config.view[windowWidth];
+
+    if (size !== undefined) {
+        width = size[list.config.col];
+    }
+    $(".urlBox").css('width', width)
+    // console.log('colNum:' + list.config.col + ' windowWidth:' + windowWidth + ' windowHeight:' + windowHeight + ' gridWidth:' + width)
 }
 // 鼠标滚轮
 function flide(delta, e) {
+    console.log(e);
+    
     if (timeStampVal == 0) {
         timeStampVal = e.timeStamp
     } else if (e.timeStamp - timeStampVal > 320) {
@@ -123,7 +129,7 @@ if (data != null) {
     // 检查火狐浏览器
     var isFF = /FireFox/i.test(navigator.userAgent);
     // console.log(isFF)
-    if (isFF == true) {
+    if (isFF) {
         counter.addEventListener('DOMMouseScroll', function (e) {
             if (scrollFlag == 1) {
                 // console.log(e.timeStamp)
@@ -171,6 +177,12 @@ $(".menu-button").on('click', function () {
 })
 
 
+$("#select-button").on('click', function () {
+    var themeName = $("#theme").val();
+    localStorage.setItem('theme', themeName);
+    initTheme()
+    window.location.reload()
+})
 // 加载自定义配置
 function loadCustomConfig() {
     var data = getMainData()
@@ -192,3 +204,45 @@ function custom(keyName, className, fieldName) {
         $(className).css(fieldName, value)
     })
 }
+
+function initTheme() {
+    var theme = localStorage.getItem('theme');
+    var themeList = {
+        "default": [
+            "loadImg", "null",
+            "gridBGColor", "#48484F",
+            "settingPageBGColor", "#7D7D7D",
+            "menuButtonBGColor", "value",
+            "showJsonBGColor", "#46464D",
+            "bodyBGColor", "#343436",
+            "gridTextColor", "#75C219",
+            "showJsonColor", "#90E887",
+            "showJsonFontSize", "14 "
+        ],
+        "orange": [
+            "loadImg", "null",
+            "gridBGColor", "#48484F",
+            "settingPageBGColor", "#6B6B75",
+            "menuButtonBGColor", "value",
+            "showJsonBGColor", "#46464D",
+            "bodyBGColor", "#343436",
+            "gridTextColor", "#FFA106",
+            "showJsonColor", "#FFA106",
+            "showJsonFontSize", "14 "
+        ]
+    }
+    var themeConfigs = themeList['' + theme]
+    if (themeConfigs == undefined || themeConfigs == null) {
+        localStorage.setItem('theme', 'default')
+        themeConfigs = themeList.default
+    }
+
+    for (let index = 0; index < themeConfigs.length; index += 2) {
+        const key = themeConfigs[index];
+        const value = themeConfigs[index + 1];
+        localStorage.setItem(key, value)
+    }
+
+}
+
+initTheme()
