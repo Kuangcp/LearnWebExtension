@@ -215,7 +215,7 @@ function initTheme() {
             "menuButtonBGColor", "value",
             "showJsonBGColor", "#46464D",
             "bodyBGColor", "#343436",
-            "gridTextColor", "#75C219",
+            "gridTextColor", "#B6FC55",
             "showJsonColor", "#90E887",
             "showJsonFontSize", "14 "
         ],
@@ -227,6 +227,17 @@ function initTheme() {
             "showJsonBGColor", "#46464D",
             "bodyBGColor", "#343436",
             "gridTextColor", "#FFA106",
+            "showJsonColor", "#FFA106",
+            "showJsonFontSize", "14 "
+        ],
+        "gray": [
+            "loadImg", "null",
+            "gridBGColor", "#48484F",
+            "settingPageBGColor", "#6B6B75",
+            "menuButtonBGColor", "value",
+            "showJsonBGColor", "#46464D",
+            "bodyBGColor", "#343436",
+            "gridTextColor", "#ECEBD9",
             "showJsonColor", "#FFA106",
             "showJsonFontSize", "14 "
         ]
@@ -242,7 +253,6 @@ function initTheme() {
         const value = themeConfigs[index + 1];
         localStorage.setItem(key, value)
     }
-
 }
-
 initTheme()
+// document.getElementsByTagName('body')[0].style.backgroundColor='#343436'

@@ -1,4 +1,8 @@
 # 学习WebExtension
+> [official 中文版入门索引](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions)
+> [火狐API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs#contentScripts)
+
+
 > [参考项目:webextensions-examples](https://github.com/mdn/webextensions-examples)  
 > [newtabtools](https://github.com/darktrojan/newtabtools)  
 > [saka-key](https://github.com/lusakasa/saka-key)  
