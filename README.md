@@ -30,3 +30,5 @@
 
 https://developer.mozilla.org/zh-CN/docs/Web/API/Blob
 
+https://support.mozilla.org/zh-CN/kb/Firefox%E6%89%A9%E5%B1%95%E7%9A%84%E6%9D%83%E9%99%90%E8%AF%B7%E6%B1%82%E6%B6%88%E6%81%AF
+
