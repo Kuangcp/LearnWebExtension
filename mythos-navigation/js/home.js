@@ -1,20 +1,20 @@
 // http://blog.csdn.net/menglexinglai/article/details/39521905
 
 // 打算把url图片转成 base64
-function convertData(img, url) {
-    var result;
-    img.onload = function () {
-        var canvas = document.createElement('canvas');
-        canvas.height = img.height;
-        canvas.width = img.width;
-        var ctx = canvas.getContext("2d");
-        console.log(canvas.baseURI);
+// function convertData(img, url) {
+//     var result;
+//     img.onload = function () {
+//         var canvas = document.createElement('canvas');
+//         canvas.height = img.height;
+//         canvas.width = img.width;
+//         var ctx = canvas.getContext("2d");
+//         console.log(canvas.baseURI);
 
-        // result = canvas.toDataURL();  // 输出 Data URI
-    }
-    img.src = url;
-    return result;
-}
+//         // result = canvas.toDataURL();  // 输出 Data URI
+//     }
+//     img.src = url;
+//     return result;
+// }
 
 function CheckImgExists(imgurl) {
     var ImgObj = new Image(); //判断图片是否存在  
@@ -65,11 +65,23 @@ function insertData(lists) {
     loadCustomConfig()
 
 }
-// 得到浏览器真实大小 TODO 适配问题
+// 得到浏览器真实大小 
+// TODO 适配问题
 function autoSetWidth() {
     var windowWidth = document.body.clientWidth;
-    var windowHeight = document.body.clientHeight;
+    // var windowHeight = document.body.clientHeight;
+    // confirm("width:"+windowWidth+" height:"+ windowHeight)
 
+    // 自己的 魅蓝 metal
+    if(windowWidth == 360){
+        $(".urlBox").css('width', 164)
+        return;
+    }if(windowWidth == 640){
+        $(".urlBox").css('width', 150)
+        return;
+    }
+
+    // PC 端适配 720P 1080P 
     boxWidth = parseInt((windowWidth - list.config.col * 10) / list.config.col)
     allBoxWidth = (boxWidth + 5) * list.config.col
     var width = boxWidth + 3;
@@ -78,6 +90,7 @@ function autoSetWidth() {
     if (size !== undefined) {
         width = size[list.config.col];
     }
+    
     $(".urlBox").css('width', width)
     // console.log('colNum:' + list.config.col + ' windowWidth:' + windowWidth + ' windowHeight:' + windowHeight + ' gridWidth:' + width)
 }
@@ -255,4 +268,3 @@ function initTheme() {
     }
 }
 initTheme()
-// document.getElementsByTagName('body')[0].style.backgroundColor='#343436'
