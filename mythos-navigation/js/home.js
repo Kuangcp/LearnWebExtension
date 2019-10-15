@@ -167,6 +167,13 @@ if (data != null) {
 
 
 }
+function addDate(date,days){ 
+    var d=new Date(date); 
+    d.setDate(d.getDate()+days); 
+    var m=d.getMonth()+1; 
+    return d.getFullYear()+'-'+m+'-'+d.getDate(); 
+} 
+
 // 菜单点击
 $(".menu-button").on('click', function () {
     type = $(this).data('type')
@@ -174,6 +181,29 @@ $(".menu-button").on('click', function () {
         scrollFlag = 0
         $("#config").css('display', 'block')
         // console.log('点击设置')
+
+        firstVocationDay = localStorage.getItem('firstVocationDay')
+        console.log(firstVocationDay)
+
+        if(firstVocationDay !== null){
+            var date = new Date(firstVocationDay)
+
+            content=''
+            for(var i=1;i<30;i++){
+                date=addDate(date,1)
+                console.log(date)
+                content+= '<span>' + date +'  </span>'
+                date=addDate(date,5)
+                console.log(date)
+                content+= '<span>' + date +'  </span>'
+                if (i%3==0){
+                    content+='<br/>'
+                }
+            }
+            $("#date").html('<div>'+content+'</div>')
+        }
+
+
         return 0
     }
     temp = 0
@@ -267,4 +297,5 @@ function initTheme() {
         localStorage.setItem(key, value)
     }
 }
+
 initTheme()
